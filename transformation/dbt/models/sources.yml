@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+  - name: fournisseur
+    description: "Données brutes des offres fournisseurs collectées et chargées en base."
+    schema: fournisseur
+    tables:
+      - name: offres
+        description: "Table des offres fournisseurs validées avec clé (offer_id, observed_on)."
+        columns:
+          - name: offer_id
+            description: "Identifiant unique de l'offre fournisseur."
+          - name: supplier_id
+            description: "Code du fournisseur (ex: F01, F02, F03)."
+          - name: product_id
+            description: "Identifiant du produit référencé."
+          - name: price_cents
+            description: "Prix en centimes d'euro."
+          - name: currency
+            description: "Devise (EUR)."
+          - name: available_units
+            description: "Quantité d'unités disponibles."
+          - name: observed_on
+            description: "Date d'observation de l'offre."
+
+  - name: core
+    description: "Données du modèle relationnel de référence NovaMarket."
+    schema: core
+    tables:
+      - name: products
+        description: "Catalogue de référence des produits."
+      - name: categories
+        description: "Catégories de produits."

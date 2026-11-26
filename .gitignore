@@ -1,2 +1,13 @@
 .DS_Store
 AUTRE/
+.env
+.venv/
+__pycache__/
+*.py[cod]
+s4/travail/
+transformation/dbt/target/
+transformation/dbt/logs/
+transformation/dbt/dbt_packages/
+volumetrie/streaming/extraction_*.jsonl
+*.parquet
+.pytest_cache/

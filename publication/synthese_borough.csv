@@ -1,0 +1,7 @@
+borough,nb_trajets,part_trajets_pct,distance_moy_km,duree_moy_min,vitesse_moy_kmh
+Manhattan,4693,95.10,3.99,16.11,16.58
+Queens,203,4.11,20.26,23.33,50.97
+Brooklyn,31,0.63,5.64,17.65,18.48
+Unknown,4,0.08,2.98,20.65,11.19
+N/A,3,0.06,8.12,11.17,43.61
+Bronx,1,0.02,2.87,11.38,15.10

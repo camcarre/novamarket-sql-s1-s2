@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: stg_offres
+    description: "Vue staging des offres fournisseurs nettoyées."
+    columns:
+      - name: offer_id
+        description: "Clé unique de l'offre."
+        tests:
+          - not_null
+      - name: supplier_id
+        description: "Fournisseur émetteur."
+        tests:
+          - not_null
+      - name: product_id
+        description: "Référence produit NovaMarket."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_products')
+                field: product_id
+      - name: price_eur
+        description: "Prix unitaire converti en euros."
+        tests:
+          - not_null
+      - name: available_units
+        description: "Volume disponible."
+        tests:
+          - not_null
+
+  - name: stg_products
+    description: "Vue staging du catalogue de référence des produits."
+    columns:
+      - name: product_id
+        description: "Identifiant produit."
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_offres_fournisseurs
+    description: "Table de restitution mart par fournisseur et date d'observation."
+    columns:
+      - name: supplier_id
+        tests:
+          - not_null
+      - name: total_offres
+        tests:
+          - not_null
+      - name: total_unites_disponibles
+        tests:
+          - not_null
+
+  - name: mart_synthese_produits
+    description: "Table de synthèse marché par produit."
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
