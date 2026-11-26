@@ -25,12 +25,12 @@ def get_db_dsn() -> str:
 def find_source_file() -> Path:
     # Chemins possibles
     candidats = [
+        Path("S3/ingestion/data/valid/offres.jsonl"),
+        Path("S4/transformation/secours/offres.jsonl"),
         Path("ingestion/data/valid/offres.jsonl"),
         Path("../ingestion/data/valid/offres.jsonl"),
         Path("transformation/secours/offres.jsonl"),
         Path("secours/offres.jsonl"),
-        Path("/Users/douaud/Desktop/DEV/YNOV/PIPLINESQL/novamarket/ingestion/data/valid/offres.jsonl"),
-        Path("/Users/douaud/Desktop/DEV/YNOV/PIPLINESQL/novamarket/transformation/secours/offres.jsonl")
     ]
     for c in candidats:
         if c.exists():

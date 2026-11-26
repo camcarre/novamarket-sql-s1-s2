@@ -4,10 +4,10 @@ AUTRE/
 .venv/
 __pycache__/
 *.py[cod]
-s4/travail/
-transformation/dbt/target/
-transformation/dbt/logs/
-transformation/dbt/dbt_packages/
-volumetrie/streaming/extraction_*.jsonl
+S4/docker/travail/
+S4/transformation/dbt/target/
+S4/transformation/dbt/logs/
+S4/transformation/dbt/dbt_packages/
+S5/volumetrie/streaming/extraction_*.jsonl
 *.parquet
 .pytest_cache/

@@ -24,12 +24,12 @@ def main():
     )
     parser.add_argument(
         "--entree",
-        default="volumetrie/streaming/extraction_yellow_2024_01.jsonl",
+        default="S5/volumetrie/streaming/extraction_yellow_2024_01.jsonl",
         help="Fichier JSONL produit en M2/M3",
     )
     parser.add_argument(
         "--zones",
-        default="volumetrie/secours/zones.csv",
+        default="S5/volumetrie/secours/zones.csv",
         help="Table de référence des zones NYC",
     )
     args = parser.parse_args()

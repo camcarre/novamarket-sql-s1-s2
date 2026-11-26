@@ -20,7 +20,7 @@ services:
       retries: 30
   fournisseur:
     profiles: [ingestion]
-    build: ./ingestion/api
+    build: ./S3/ingestion/api
     environment:
       API_LATENCY_SECONDS: ${NOVAMARKET_API_LATENCY:-0.12}
     ports:
@@ -33,15 +33,15 @@ services:
       retries: 15
   dbt:
     profiles: [transfo]
-    build: ./s4
+    build: ./S4/docker
     working_dir: /work
     environment:
       HOME: /tmp
       DBT_SEND_ANONYMOUS_USAGE_STATS: "false"
     volumes:
-      - ./s4/travail:/work
-      - ./s4/exemple:/exemple:ro
-      - ./transformation/dbt:/projet
+      - ./S4/docker/travail:/work
+      - ./S4/docker/exemple:/exemple:ro
+      - ./S4/transformation/dbt:/projet
     mem_limit: 1g
     cpus: 2
   metabase:

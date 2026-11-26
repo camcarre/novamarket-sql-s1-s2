@@ -126,7 +126,7 @@ if __name__ == "__main__":
     parser.add_argument("--limite", type=int, default=5000, help="Nombre maximum de lignes à parcourir")
     parser.add_argument(
         "--sortie",
-        default="volumetrie/streaming/extraction_yellow_2024_01.jsonl",
+        default="S5/volumetrie/streaming/extraction_yellow_2024_01.jsonl",
         help="Chemin du fichier JSONL de sortie",
     )
     args = parser.parse_args()
